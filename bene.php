@@ -205,7 +205,7 @@ const contenido = {
 <nav>
   <div class="container">
   <h2 class="lio">CAPTACIÓN DE AGUA PLUVIAL</h2>
-<a href="index.php">Inicio</a>
+<a href="index.html">Inicio</a>
   <a href="area.php">Área</a>
   <a href="clima.php">Clima</a>
   <a href="bene.php">Beneficios</a>
