@@ -3,30 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>inicio</title>
+  <title>Inicio - Captación de Agua Pluvial</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(to bottom, #b3e0ff, #e6f7ff);
-      color:  #ffff;                /* #00334d;*/
+      color: #ffffff;
       margin: 0;
-      padding: 0px;
+      padding: 0;
       min-height: 100vh;
-display: flex;
+      display: flex;
       flex-direction: column;
-
     }
 
-
     nav {
-      background-color:  rgba(0, 51, 102, 0.85);
+      background-color: rgba(0, 51, 102, 0.85);
       padding: 15px 30px;
       width: 100%;
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-          justify-content: center;
-    align-items: center;
     }
 
     nav a {
@@ -44,13 +42,13 @@ display: flex;
       transform: scale(1.05);
     }
 
-.lei {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 28px;
-            color:rgb(190, 233, 254);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-        }
+    .lei {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+      color: rgb(190, 233, 254);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
 
     .carrusel-container {
       width: 100%;
@@ -62,7 +60,7 @@ display: flex;
     #slides {
       display: flex;
       transition: transform 1s ease-in-out;
-      width: 100%; /* Asumiendo 5 imágenes */
+      width: 100%;
     }
 
     #slides > * {
@@ -112,11 +110,10 @@ display: flex;
       color: #00334d;
     }
 
-    /* Más ancho del carrusel en pantallas grandes */
     @media (min-width: 1024px) {
       .carrusel-container {
-        width: 1020px;      }
-
+        width: 1020px;
+      }
       nav a {
         font-size: 16px;
       }
@@ -126,7 +123,6 @@ display: flex;
       .carrusel-container img {
         height: 160px;
       }
-
       nav a {
         font-size: 15px;
       }
@@ -145,17 +141,18 @@ display: flex;
 <nav>
   <div class="container1">
     <h2 id="inicio">CAPTACIÓN DE AGUA PLUVIAL</h2>
-    <a href="index.php">Inicio</a>
-    <a href="area.php">Área</a>
-    <a href="clima.php">Clima</a>
-    <a href="bene.php">Beneficios</a>
-    <a href="huella.php">Huella hídrica</a>
-    <a href="presu.php">Presupuestos</a>
-    <a href="contacto.php">Contacto</a>
-    <a href="actual.html">Tiempo actual</a>
+    <a href="#">Inicio</a>
+    <a href="#">Área</a>
+    <a href="#">Clima</a>
+    <a href="#">Beneficios</a>
+    <a href="#">Huella hídrica</a>
+    <a href="#">Presupuestos</a>
+    <a href="#">Contacto</a>
+    <a href="#">Tiempo actual</a>
   </div>
 </nav>
 
+<!-- Carrusel -->
 <div class="carrusel-container">
   <div id="slides">
     <img src="ima/acua.jpg" alt="Sistema recolector de agua" >
@@ -164,58 +161,28 @@ display: flex;
     <img src="ima/plu.jpg" alt="Uso eficiente del agua">
     <img src="ima/comu.jpg" alt="Uso eficiente del agua">
   </div>
-  <figcaption>Diferentes sistemasde captacion de agua pluvial</figcaption><br>
+  <figcaption style="text-align: center; color: #00334d;">Diferentes sistemas de captación de agua pluvial</figcaption><br>
 </div>
 
-  <div>
-    <?php
-    if (isset($_GET['page'])) {
-      $page = $_GET['page'];
-      $allowed_pages = ['inicio', 'bene', 'contacto', 'presu', 'area', 'clima'];
-      if (in_array($page, $allowed_pages)) {
-        include $page . '.php';
-      } else {
-        echo "<p>Página no encontrada.</p>";
-      }
-    }
-    ?>
-  </div>
-
+<!-- Información -->
 <div class="text-box">
   <ul>
-<?php
-$lista = [
-  "Recolección de lluvia" => "La recolección de agua de lluvia es un 
-  método sostenible que permite aprovechar el agua pluvial para diversos 
-  usos, reduciendo la dependencia de fuentes convencionales y promoviendo 
-  la conservación del recurso hídrico. <br>
-  Este proceso implica varias etapas clave: <br>
-- CAPTACION: Través de techos, superficies impermeables o áreas 
-diseñadas para recolectar el agua de lluvia.<br> <br>
-- CONDUCCION: El agua captada es dirigida mediante canaletas.<br> <br>
-- FILTRACION Y TRATAMIENTO: El agua recolectada pasa por filtros que 
-eliminan sedimentos y contaminantes.<br> <br>
-- ALMACENAMIENTO: Se guarda en Tanques o depósitos diseñados para evitar 
-la contaminación y la evaporación.<br> <br>
-- DISTRIBUCION Y USO: El agua recolectada puede emplearse para riego, 
-limpieza, procesos industriales.<br> <br>",
-
-  "Almacenamiento seguro" => "El almacenamiento seguro del agua es esencial 
-  para preservar su calidad y evitar la contaminación, asegurando su 
-  disponibilidad para consumo humano, uso doméstico e industrial. 
-  Para ello, se emplean tanques y bidones diseñados específicamente para 
-  proteger el agua de agentes externos y mantenerla en condiciones óptimas.",     
-];
-      foreach ($lista as $titulo => $descripcion) {
-        echo "
-          <li class='item'>
-            <h4>$titulo</h4>
-            <p>$descripcion</p>
-          </li>";
-      }
-      ?>
-    </ul>
-  </div>
+    <li class="item">
+      <h4>Recolección de lluvia</h4>
+      <p>La recolección de agua de lluvia es un método sostenible que permite aprovechar el agua pluvial para diversos usos, reduciendo la dependencia de fuentes convencionales y promoviendo la conservación del recurso hídrico.<br><br>
+        Este proceso implica varias etapas clave:<br>
+        - CAPTACIÓN: A través de techos, superficies impermeables o áreas diseñadas para recolectar el agua de lluvia.<br><br>
+        - CONDUCCIÓN: El agua captada es dirigida mediante canaletas.<br><br>
+        - FILTRACIÓN Y TRATAMIENTO: El agua recolectada pasa por filtros que eliminan sedimentos y contaminantes.<br><br>
+        - ALMACENAMIENTO: Se guarda en tanques o depósitos diseñados para evitar la contaminación y la evaporación.<br><br>
+        - DISTRIBUCIÓN Y USO: El agua recolectada puede emplearse para riego, limpieza, procesos industriales.<br><br>
+      </p>
+    </li>
+    <li class="item">
+      <h4>Almacenamiento seguro</h4>
+      <p>El almacenamiento seguro del agua es esencial para preservar su calidad y evitar la contaminación, asegurando su disponibilidad para consumo humano, uso doméstico e industrial. Para ello, se emplean tanques y bidones diseñados específicamente para proteger el agua de agentes externos y mantenerla en condiciones óptimas.</p>
+    </li>
+  </ul>
 </div>
 
 <!-- Script para carrusel automático -->
@@ -228,7 +195,6 @@ limpieza, procesos industriales.<br> <br>",
     if (index >= totalSlides) slideIndex = 0;
     else if (index < 0) slideIndex = totalSlides - 1;
     else slideIndex = index;
-
     slides.style.transform = 'translateX(' + (-slideIndex * 100) + '%)';
   }
 
@@ -236,7 +202,6 @@ limpieza, procesos industriales.<br> <br>",
     mostrarSlide(slideIndex + n);
   }
 
-  // Gira en bucle cada 15 segundos
   setInterval(() => moverSlide(1), 5000);
   window.onload = () => mostrarSlide(0);
 </script>
